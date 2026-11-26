@@ -1,0 +1,66 @@
+[
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/negroni/",
+    "translations": {
+      "ja": ["ネグローニ", "ジン、カンパリ、赤ベルモット各30mL", "氷で軽く混ぜ、半月切りオレンジを添える"],
+      "zh": ["尼格罗尼", "金酒、金巴利、甜红味美思各30毫升", "加冰轻搅，饰半片橙"],
+      "en": ["Negroni", "Gin, Campari, sweet red vermouth 30mL each", "Stir over ice"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/mimosa/",
+    "translations": {
+      "ja": ["ミモザ", "生搾りオレンジ果汁とプロセッコ各75mL", "果汁にワインを静かに注ぎ、軽く混ぜる"],
+      "zh": ["含羞草", "鲜橙汁、普罗塞克各75毫升", "橙汁入杯，缓倒酒，轻搅"],
+      "en": ["Mimosa", "Fresh OJ & Prosecco, 75mL each", "Top juice, stir gently"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/kir/",
+    "translations": {
+      "ja": ["キール", "辛口白ワイン90mL、カシスリキュール10mL", "カシスに白ワインを注ぐ"],
+      "zh": ["基尔", "干白90毫升、黑醋栗利口酒10毫升", "先倒利口酒，再加干白"],
+      "en": ["Kir", "90mL dry white wine, 10mL crème de cassis", "Top cassis with wine"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/black-russian/",
+    "translations": {
+      "ja": ["ブラック・ルシアン", "ウォッカ50mL、コーヒーリキュール20mL", "氷の入ったロックグラスで軽く混ぜる"],
+      "zh": ["黑俄罗斯", "伏特加50毫升、咖啡利口酒20毫升", "倒入冰块杯中，轻搅"],
+      "en": ["Black Russian", "50mL vodka, 20mL coffee liqueur", "Stir over ice"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/garibaldi/",
+    "translations": {
+      "ja": ["ガリバルディ", "カンパリ45mL、生搾りオレンジ120mL", "氷入りグラスに注ぎ、くし切りオレンジを添える"],
+      "zh": ["加里波第", "金巴利45毫升、鲜橙汁120毫升", "倒入加冰高球杯，饰橙角"],
+      "en": ["Garibaldi", "45mL Campari, 120mL fresh OJ", "Over ice, orange wedge"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/sidecar/",
+    "translations": {
+      "ja": ["サイドカー", "コニャック50mL、トリプルセックと生レモン各20mL", "氷でシェイクし、冷やしたカクテルグラスにこす"],
+      "zh": ["边车", "干邑50毫升、橙味利口酒与鲜柠檬汁各20毫升", "加冰摇匀，滤入冰镇鸡尾酒杯"],
+      "en": ["Sidecar", "50mL Cognac, 20mL each triple sec & lemon", "Shake, strain"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/americano/",
+    "translations": {
+      "ja": ["アメリカーノ", "カンパリと赤ベルモット各30mL、ソーダ少々", "氷で軽く混ぜ、オレンジ半切れとレモン皮を添える"],
+      "zh": ["美式鸡尾酒", "金巴利、甜红味美思各30毫升，少许苏打水", "加冰轻搅，饰半片橙和柠檬皮"],
+      "en": ["Americano", "Campari & sweet vermouth 30mL each", "Soda splash, stir"]
+    }
+  },
+  {
+    "sourceUrl": "https://iba-world.com/iba-cocktail/daiquiri/",
+    "translations": {
+      "ja": ["ダイキリ", "キューバ白ラム60mL、生ライム20mL、細目砂糖2バースプーン", "砂糖を溶かし、氷でシェイクして冷えた杯にこす"],
+      "zh": ["代基里", "古巴白朗姆60毫升、鲜青柠20毫升、两吧勺细糖", "搅至糖溶，加冰摇匀，滤入冰镇杯"],
+      "en": ["Daiquiri", "White rum 60mL, lime 20mL, 2 barsp sugar", "Shake, strain"]
+    }
+  }
+]

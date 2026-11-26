@@ -1,0 +1,83 @@
+[
+  {
+    "author": "松尾芭蕉",
+    "sourceUrl": "https://wp.haiku-hia.com/about_haiku/basho300/archives/300-02.html",
+    "translations": {
+      "ja": ["古池や", "蛙飛びこむ", "水の音"],
+      "zh": ["古池啊", "青蛙一跃", "一声水响"],
+      "en": ["The old pond—", "a frog leaps in", "and water sounds."]
+    }
+  },
+  {
+    "author": "正岡子規",
+    "sourceUrl": "https://www.city.matsuyama.ehime.jp/shicho/kaiken/H29/kisyakaikenn0509.html",
+    "translations": {
+      "ja": ["柿くへば", "鐘が鳴るなり", "法隆寺"],
+      "zh": ["一口柿子", "钟声响了", "法隆寺"],
+      "en": ["I bite a persimmon—", "the bell rings", "at Hōryū-ji."]
+    }
+  },
+  {
+    "author": "与謝蕪村",
+    "sourceUrl": "https://www.city.osaka.lg.jp/miyakojima/page/0000083259.html",
+    "translations": {
+      "ja": ["春の海", "終日のたり", "のたりかな"],
+      "zh": ["春海", "一整日悠悠", "悠悠起伏"],
+      "en": ["The spring sea", "rolling gently all day,", "roll after roll."]
+    }
+  },
+  {
+    "author": "小林一茶",
+    "sourceUrl": "https://www.issakinenkan.com/museumgoods/",
+    "translations": {
+      "ja": ["雀の子", "そこのけそこのけ", "御馬が通る"],
+      "zh": ["小麻雀", "让开，让开", "马儿过来了"],
+      "en": ["Little sparrows,", "make way, make way—", "a horse is passing."]
+    }
+  },
+  {
+    "author": "松尾芭蕉",
+    "sourceUrl": "https://www.city.yamagata-yamagata.lg.jp/shiseijoho/shicho/1006787/1006790/1005497.html",
+    "translations": {
+      "ja": ["閑かさや", "岩にしみ入る", "蝉の声"],
+      "zh": ["万籁寂静", "浸入岩石", "是蝉声"],
+      "en": ["Such stillness—", "seeping into the rocks,", "the cicadas' cry."]
+    }
+  },
+  {
+    "author": "与謝蕪村",
+    "sourceUrl": "https://www.city.osaka.lg.jp/miyakojima/page/0000083259.html",
+    "translations": {
+      "ja": ["なの花や", "月は東に", "日は西に"],
+      "zh": ["油菜花开", "月在东", "日在西"],
+      "en": ["Rapeseed in bloom—", "the moon in the east,", "the sun in the west."]
+    }
+  },
+  {
+    "author": "松尾芭蕉",
+    "sourceUrl": "https://www.town.hiraizumi.iwate.jp/heritage/history/kanren.html",
+    "translations": {
+      "ja": ["夏草や", "兵どもが", "夢の跡"],
+      "zh": ["夏草萋萋", "战士们", "梦的遗迹"],
+      "en": ["Summer grasses—", "where warriors", "once dreamed."]
+    }
+  },
+  {
+    "author": "与謝蕪村",
+    "sourceUrl": "https://www.city.osaka.lg.jp/miyakojima/page/0000083259.html",
+    "translations": {
+      "ja": ["春風や", "堤長うして", "家遠し"],
+      "zh": ["春风吹啊", "长长的堤岸", "家还很远"],
+      "en": ["The spring wind—", "the long riverbank,", "home still far off."]
+    }
+  },
+  {
+    "author": "松尾芭蕉",
+    "sourceUrl": "https://www.city.shinjo.yamagata.jp/k001/020/010/050/020/2585.html",
+    "translations": {
+      "ja": ["五月雨を", "あつめて早し", "最上川"],
+      "zh": ["汇聚梅雨", "奔流湍急", "最上川"],
+      "en": ["Gathering the summer rains,", "how swiftly it runs—", "the Mogami River."]
+    }
+  }
+]

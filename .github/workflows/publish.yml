@@ -1,0 +1,56 @@
+name: Prepare daily content
+on:
+  schedule:
+    - cron: '17 13 * * *'
+    - cron: '43 15 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Target Beijing date (YYYY-MM-DD); blank prepares today and tomorrow'
+        type: string
+      offline:
+        description: 'Use local content libraries'
+        type: boolean
+        default: false
+permissions:
+  contents: write
+concurrency:
+  group: daily-content-production
+  cancel-in-progress: false
+jobs:
+  publish:
+    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Generate missing editions
+        env:
+          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+          MODEL_BASE_URL: ${{ vars.MODEL_BASE_URL }}
+          MODEL_NAME: ${{ vars.MODEL_NAME }}
+          TARGET_DATE: ${{ inputs.date }}
+          FORCE_OFFLINE: ${{ inputs.offline }}
+        shell: bash
+        run: |
+          flags=()
+          if [[ "$FORCE_OFFLINE" == 'true' ]]; then flags+=(--offline); fi
+          if [[ -n "$TARGET_DATE" ]]; then
+            npm run generate -- --date "$TARGET_DATE" "${flags[@]}"
+          else
+            today="$(TZ=Asia/Shanghai date +%F)"
+            npm run generate -- --date "$today" "${flags[@]}"
+            npm run generate -- "${flags[@]}"
+          fi
+          npm run build
+      - name: Commit validated JSON
+        run: |
+          git add -- public/api/v1
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='daily-haiku[bot]' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Publish daily content'
+          git push

@@ -1,0 +1,75 @@
+{
+  "spring": [
+    {
+      "ja": ["春雨や", "傘のしずくを", "猫が嗅ぐ"],
+      "zh": ["春雨啊", "猫嗅了嗅", "伞尖的水珠"],
+      "en": ["Spring rain—", "a cat sniffs", "the drops on my umbrella."]
+    },
+    {
+      "ja": ["花冷えや", "橋の手すりに", "鳥の跡"],
+      "zh": ["花时微寒", "桥栏上", "一双鸟爪印"],
+      "en": ["A chill among blossoms—", "on the bridge rail", "a bird's footprints."]
+    },
+    {
+      "ja": ["花びらや", "水にほどける", "舟の影"],
+      "zh": ["落花啊", "水中慢慢散开", "一叶舟影"],
+      "en": ["Falling petals—", "the shadow of a boat", "loosens in the water."]
+    }
+  ],
+  "summer": [
+    {
+      "ja": ["夏の月", "川の階段", "水ひとつ"],
+      "zh": ["夏夜月", "江边的台阶", "一小洼水"],
+      "en": ["Summer moon—", "on the steps down to the river,", "one puddle."]
+    },
+    {
+      "ja": ["夕立や", "軒の向こうに", "靴の音"],
+      "zh": ["晚来急雨", "屋檐那头", "一阵脚步声"],
+      "en": ["An evening shower—", "from beyond the eaves", "the sound of shoes."]
+    },
+    {
+      "ja": ["夏の雲", "窓の金魚の", "ひれひかる"],
+      "zh": ["夏云", "窗边的金鱼", "鳍一闪"],
+      "en": ["A summer cloud—", "the goldfish by the window", "flashes a fin."]
+    }
+  ],
+  "autumn": [
+    {
+      "ja": ["秋の風", "鍵のかすかな", "音ひとつ"],
+      "zh": ["秋风里", "钥匙轻轻", "响了一声"],
+      "en": ["Autumn wind—", "one soft click", "from a key."]
+    },
+    {
+      "ja": ["落葉踏む", "ひとつ遅れて", "足の音"],
+      "zh": ["踏过落叶", "迟了一拍", "另一个脚步声"],
+      "en": ["Treading on fallen leaves—", "a beat behind,", "another footstep."]
+    },
+    {
+      "ja": ["秋の暮", "針に残った", "糸の赤"],
+      "zh": ["秋日暮色", "针眼里剩下", "一截红线"],
+      "en": ["Autumn dusk—", "in the eye of the needle,", "the red of the thread."]
+    }
+  ],
+  "winter": [
+    {
+      "ja": ["冬の朝", "急須のふたに", "湯気ひとつ"],
+      "zh": ["冬日清晨", "茶壶盖上", "一缕白汽"],
+      "en": ["Winter morning—", "from the teapot lid", "a single wisp of steam."]
+    },
+    {
+      "ja": ["冬の風", "波止場の綱が", "きしみだす"],
+      "zh": ["冬风起", "码头的系船绳", "吱呀响了"],
+      "en": ["Winter wind—", "the mooring rope", "begins to creak."]
+    },
+    {
+      "ja": ["冬の月", "湯呑みの底に", "茶のひかり"],
+      "zh": ["冬夜月", "杯底的残茶", "微微有光"],
+      "en": ["Winter moon—", "a gleam of tea", "at the bottom of the cup."]
+    },
+    {
+      "ja": ["冬の星", "終バスの窓", "指の跡"],
+      "zh": ["冬夜星", "末班车的窗上", "一道指痕"],
+      "en": ["Winter stars—", "a finger mark", "on the last bus window."]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>每日俳句</title>
+  <link rel="stylesheet" href="/web/style.css">
+  <script type="module" src="/web/app.js"></script>
+</head>
+<body data-feed="__FEED__">
+  <main class="site">
+    <h1 class="visually-hidden">每日俳句</h1>
+    <nav class="editions" aria-label="选择俳句版本">
+      <a href="/custom/" __ACTIVE_CUSTOM__>定制</a>
+      <a href="/classic/" __ACTIVE_CLASSIC__>经典</a>
+    </nav>
+
+    <article class="sheet" aria-labelledby="edition">
+      <header>
+        <h2 id="edition" data-edition>每日俳句</h2>
+        <time hidden></time>
+      </header>
+
+      <div class="reading">
+        <div class="fireworks" aria-hidden="true" hidden>
+          <span class="burst burst-gold"></span>
+          <span class="burst burst-red"></span>
+        </div>
+        <p class="verse" lang="ja" aria-live="polite" aria-atomic="true" hidden>
+          <span></span><span></span><span></span>
+        </p>
+        <p class="status" role="status"></p>
+        <noscript>启用 JavaScript 后即可阅读。</noscript>
+      </div>
+
+      <footer>
+        <button class="language" type="button" hidden></button>
+        <span class="attribution" hidden></span>
+        <a class="source" hidden></a>
+      </footer>
+    </article>
+  </main>
+</body>
+</html>
