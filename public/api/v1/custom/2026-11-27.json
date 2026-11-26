@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-11-27",
+  "kind": "haiku",
+  "source": "model",
+  "translations": {
+    "ja": [
+      "霧の窓",
+      "蜜柑の皮を",
+      "剥く音や"
+    ],
+    "zh": [
+      "雾窗前",
+      "剥着蜜柑皮",
+      "一声轻响"
+    ],
+    "en": [
+      "A fogged window—",
+      "peeling the skin from a mandarin,",
+      "a soft sound."
+    ]
+  }
+}

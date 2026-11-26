@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "date": "2026-11-27",
+  "kind": "haiku",
+  "source": "master",
+  "author": "松尾芭蕉",
+  "sourceUrl": "https://www.city.yamagata-yamagata.lg.jp/shiseijoho/shicho/1006787/1006790/1005497.html",
+  "translations": {
+    "ja": [
+      "閑かさや",
+      "岩にしみ入る",
+      "蝉の声"
+    ],
+    "zh": [
+      "万籁寂静",
+      "浸入岩石",
+      "是蝉声"
+    ],
+    "en": [
+      "Such stillness—",
+      "seeping into the rocks,",
+      "the cicadas' cry."
+    ]
+  }
+}

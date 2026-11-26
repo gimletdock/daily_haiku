@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "date": "2026-11-26",
+  "kind": "haiku",
+  "source": "master",
+  "author": "小林一茶",
+  "sourceUrl": "https://www.issakinenkan.com/museumgoods/",
+  "translations": {
+    "ja": [
+      "雀の子",
+      "そこのけそこのけ",
+      "御馬が通る"
+    ],
+    "zh": [
+      "小麻雀",
+      "让开，让开",
+      "马儿过来了"
+    ],
+    "en": [
+      "Little sparrows,",
+      "make way, make way—",
+      "a horse is passing."
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "date": "2026-11-26",
+  "kind": "haiku",
+  "source": "model",
+  "translations": {
+    "ja": [
+      "冬曇り",
+      "干し大根の",
+      "匂ひけり"
+    ],
+    "zh": [
+      "冬日阴天",
+      "萝卜干的气味",
+      "飘了过来"
+    ],
+    "en": [
+      "winter overcast",
+      "the smell of drying daikon",
+      "hangs in the cold air"
+    ]
+  }
+}
