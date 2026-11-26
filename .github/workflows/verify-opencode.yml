@@ -36,7 +36,40 @@ jobs:
           fi
           sample="$(mktemp -d)"
           target="$(node --input-type=module -e 'import { isWeekend, shanghaiDate, shiftDate } from "./build/contract.js"; let date = shanghaiDate(); while (isWeekend(date)) date = shiftDate(date, 1); console.log(date)')"
-          npm run generate -- --date "$target" --out "$sample"
+          cat > "$sample/model-trace.mjs" <<'JS'
+          const upstream = globalThis.fetch;
+          globalThis.fetch = async (url, options) => {
+            if (String(url) !== 'https://opencode.ai/inference/openai/v1/chat/completions') {
+              return upstream(url, options);
+            }
+            const start = Date.now();
+            try {
+              const response = await upstream(url, options);
+              console.log(`::notice::OpenCode HTTP ${response.status} after ${Date.now() - start} ms`);
+              if (response.ok) {
+                const data = await response.clone().json().catch(() => null);
+                const content = data?.choices?.[0]?.message?.content;
+                let format = 'empty or non-text message';
+                if (typeof content === 'string' && content.trim()) {
+                  try {
+                    const body = JSON.parse(content);
+                    format = ['ja','zh','en'].every(key => Array.isArray(body?.[key]) && body[key].length === 3)
+                      ? 'three language arrays' : 'unexpected JSON fields';
+                  } catch {
+                    format = content.trim().startsWith('```') ? 'Markdown-fenced JSON or text' : 'non-JSON text';
+                  }
+                }
+                console.log(`::notice::OpenCode response shape: ${format}`);
+              }
+              return response;
+            } catch (error) {
+              const cause = ['TimeoutError', 'AbortError', 'TypeError'].includes(error?.name) ? error.name : 'transport error';
+              console.log(`::warning::OpenCode transport: ${cause} after ${Date.now() - start} ms`);
+              throw error;
+            }
+          };
+          JS
+          node --import "$sample/model-trace.mjs" build/generator/cli.js --date "$target" --out "$sample"
           node --input-type=module - "$sample/api/v1/custom/$target.json" <<'JS'
           import { readFile } from 'node:fs/promises';
           import { validateEntry } from './build/contract.js';
