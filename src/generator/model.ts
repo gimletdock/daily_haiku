@@ -1,3 +1,4 @@
+import { randomUUID } from "node:crypto";
 import { validateEntry, type Entry } from "../contract.js";
 import { type News, type Weather } from "./context.js";
 
@@ -30,7 +31,7 @@ const systemPrompt = [
 export function configuredModel() {
   const key = process.env.MODEL_API_KEY?.trim();
   const name = process.env.MODEL_NAME?.trim();
-  return key && name ? { key, name } : undefined;
+  return key && name ? { key, name, sessionId: randomUUID() } : undefined;
 }
 
 export async function modelEntry(
@@ -43,9 +44,19 @@ export async function modelEntry(
   if (endpoint.username || endpoint.password || endpoint.search || endpoint.hash || (!loopback && endpoint.protocol !== "https:")) {
     throw new Error("Invalid model endpoint");
   }
+  const opencodeGo = endpoint.origin === "https://opencode.ai"
+    && endpoint.pathname === "/inference/go/openai/v1/chat/completions";
+  const headers: Record<string, string> = {
+    Authorization: `Bearer ${configuration.key}`,
+    "Content-Type": "application/json"
+  };
+  if (opencodeGo) {
+    headers["User-Agent"] = "daily-haiku/0.1.0";
+    headers["x-opencode-session"] = configuration.sessionId;
+  }
   const response = await fetch(endpoint, {
     method: "POST",
-    headers: { Authorization: `Bearer ${configuration.key}`, "Content-Type": "application/json" },
+    headers,
     body: JSON.stringify({
       model: configuration.name,
       messages: [
@@ -54,7 +65,7 @@ export async function modelEntry(
       ]
     }),
     redirect: "error",
-    signal: AbortSignal.timeout(12_000)
+    signal: AbortSignal.timeout(opencodeGo ? 45_000 : 12_000)
   });
   if (!response.ok) throw new Error("Model service unavailable");
   try {
