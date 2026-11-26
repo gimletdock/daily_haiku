@@ -30,7 +30,7 @@ jobs:
             echo "::error::Repository secret MODEL_API_KEY is missing"
             exit 1
           fi
-          if [[ "$MODEL_NAME" != "deepseek-v4.1-flash" || "${MODEL_BASE_URL%/}" != "https://opencode.ai/inference/openai/v1" ]]; then
+          if [[ "$MODEL_NAME" != "deepseek-v4.1-flash" || ! "${MODEL_BASE_URL%/}" =~ ^https://opencode\.ai/inference/(go/)?openai/v1$ ]]; then
             echo "::error::MODEL_NAME or MODEL_BASE_URL differs from the agreed OpenCode configuration"
             exit 1
           fi
@@ -39,7 +39,7 @@ jobs:
           cat > "$sample/model-trace.mjs" <<'JS'
           const upstream = globalThis.fetch;
           globalThis.fetch = async (url, options) => {
-            if (String(url) !== 'https://opencode.ai/inference/openai/v1/chat/completions') {
+            if (!/^https:\/\/opencode\.ai\/inference\/(?:go\/)?openai\/v1\/chat\/completions$/.test(String(url))) {
               return upstream(url, options);
             }
             const start = Date.now();
