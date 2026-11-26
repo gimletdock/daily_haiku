@@ -59,6 +59,10 @@ jobs:
                   ['authorization', /unauthorized|forbidden|permission|api key|credential/],
                   ['region', /region|country|location/]
                 ];
+                const keywords = ['session','header','coding','agent','harness','user-agent','global','privacy','provider','region','unsupported','invalid','message','stream','thinking','plan','model','allow','blocked','missing','must','only','unsupported','supported','reasoning','content','request','opencode','go','subscription','external','contact','access','client','id','x-opencode-session','attribution','eligible','parameter','balance','country','service','input','authentication','signature','usage','native','identify'];
+                const words = description.match(/[a-z]+(?:-[a-z]+)*/g) || [];
+                const safeTerms = [...new Set(words.filter(word => keywords.includes(word)))];
+                console.log(`::notice::OpenCode error terms: ${safeTerms.join(' ')}`);
                 const matches = classes.filter(([, expression]) => expression.test(description)).map(([label]) => label);
                 const params = ['model','messages','temperature','max_tokens','max_completion_tokens','response_format','stream','thinking','reasoning_effort'];
                 const param = params.includes(result?.error?.param) ? result.error.param : 'not specified';
