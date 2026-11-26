@@ -46,6 +46,24 @@ jobs:
             try {
               const response = await upstream(url, options);
               console.log(`::notice::OpenCode HTTP ${response.status} after ${Date.now() - start} ms`);
+              if (!response.ok) {
+                const result = await response.clone().json().catch(() => null);
+                const fields = [result?.error?.code, result?.error?.type, result?.error?.message, result?.error, result?.message];
+                const description = fields.filter(value => typeof value === 'string').join(' ').toLowerCase();
+                const route = String(url).includes('/go/') ? 'Go' : 'Console';
+                const classes = [
+                  ['balance or quota', /insufficient|balance|payment|billing|credits|quota/],
+                  ['subscription', /subscription|plan|subscriber/],
+                  ['model', /model|upstream|provider/],
+                  ['request fields', /invalid|parameter|required|messages|unsupported|request|format/],
+                  ['authorization', /unauthorized|forbidden|permission|api key|credential/],
+                  ['region', /region|country|location/]
+                ];
+                const matches = classes.filter(([, expression]) => expression.test(description)).map(([label]) => label);
+                const params = ['model','messages','temperature','max_tokens','max_completion_tokens','response_format','stream','thinking','reasoning_effort'];
+                const param = params.includes(result?.error?.param) ? result.error.param : 'not specified';
+                console.log(`::notice::OpenCode ${route} error classification: ${matches.join(', ') || 'unspecified'}; parameter: ${param}`);
+              }
               if (response.ok) {
                 const data = await response.clone().json().catch(() => null);
                 const content = data?.choices?.[0]?.message?.content;
