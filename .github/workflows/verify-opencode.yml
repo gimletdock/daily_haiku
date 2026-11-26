@@ -1,0 +1,50 @@
+name: Verify OpenCode generation
+on:
+  push:
+    branches: [verify/opencode-model]
+    paths: [.github/workflows/verify-opencode.yml]
+permissions:
+  contents: read
+jobs:
+  model:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run compile
+      - name: Verify real model and validated output
+        env:
+          MODEL_API_KEY: ${{ secrets.MODEL_API_KEY }}
+          MODEL_BASE_URL: ${{ vars.MODEL_BASE_URL }}
+          MODEL_NAME: ${{ vars.MODEL_NAME }}
+        shell: bash
+        run: |
+          if [[ -z "${MODEL_API_KEY//[[:space:]]/}" ]]; then
+            echo "::error::Repository secret MODEL_API_KEY is missing"
+            exit 1
+          fi
+          if [[ "$MODEL_NAME" != "deepseek-v4.1-flash" || "${MODEL_BASE_URL%/}" != "https://opencode.ai/inference/openai/v1" ]]; then
+            echo "::error::MODEL_NAME or MODEL_BASE_URL differs from the agreed OpenCode configuration"
+            exit 1
+          fi
+          sample="$(mktemp -d)"
+          target="$(node --input-type=module -e 'import { isWeekend, shanghaiDate, shiftDate } from "./build/contract.js"; let date = shanghaiDate(); while (isWeekend(date)) date = shiftDate(date, 1); console.log(date)')"
+          npm run generate -- --date "$target" --out "$sample"
+          node --input-type=module - "$sample/api/v1/custom/$target.json" <<'JS'
+          import { readFile } from 'node:fs/promises';
+          import { validateEntry } from './build/contract.js';
+          const entry = validateEntry(JSON.parse(await readFile(process.argv[2], 'utf8')), 'custom');
+          if (entry.source !== 'model') {
+            console.error('::error::Generation used the backup catalog');
+            process.exitCode = 1;
+          } else {
+            console.log('OpenCode returned a valid, model-generated three-language haiku.');
+          }
+          JS
