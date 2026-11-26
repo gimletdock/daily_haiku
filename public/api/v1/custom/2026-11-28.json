@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "date": "2026-11-28",
+  "kind": "cocktail",
+  "source": "recipe",
+  "sourceUrl": "https://iba-world.com/iba-cocktail/negroni/",
+  "translations": {
+    "ja": [
+      "ネグローニ",
+      "ジン、カンパリ、赤ベルモット各30mL",
+      "氷で軽く混ぜ、半月切りオレンジを添える"
+    ],
+    "zh": [
+      "尼格罗尼",
+      "金酒、金巴利、甜红味美思各30毫升",
+      "加冰轻搅，饰半片橙"
+    ],
+    "en": [
+      "Negroni",
+      "Gin, Campari, sweet red vermouth 30mL each",
+      "Stir over ice"
+    ]
+  }
+}
