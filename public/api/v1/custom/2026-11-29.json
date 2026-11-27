@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "date": "2026-11-29",
+  "kind": "cocktail",
+  "source": "recipe",
+  "sourceUrl": "https://iba-world.com/iba-cocktail/mimosa/",
+  "translations": {
+    "ja": [
+      "ミモザ",
+      "生搾りオレンジ果汁とプロセッコ各75mL",
+      "果汁にワインを静かに注ぎ、軽く混ぜる"
+    ],
+    "zh": [
+      "含羞草",
+      "鲜橙汁、普罗塞克各75毫升",
+      "橙汁入杯，缓倒酒，轻搅"
+    ],
+    "en": [
+      "Mimosa",
+      "Fresh OJ & Prosecco, 75mL each",
+      "Top juice, stir gently"
+    ]
+  }
+}
